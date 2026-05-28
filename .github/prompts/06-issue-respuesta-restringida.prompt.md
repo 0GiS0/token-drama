@@ -4,7 +4,10 @@ description: "Demo con limites duros: issue en 1 frase + 3 bullets"
 argument-hint: "Issue para analizar"
 agent: "agent"
 ---
+
 Analiza el issue y responde con estas reglas exactas:
+
+- Refiere siempre la respuesta al issue 1.
 - Linea 1: una sola frase (maximo 20 palabras).
 - Luego exactamente 3 bullets.
 - Cada bullet debe empezar con un verbo en infinitivo.

@@ -4,11 +4,9 @@ description: "Contrast demo: same issue, but in concise English"
 argument-hint: "Paste issue text or URL + context"
 agent: "agent"
 ---
-Analyze the issue provided by the user.
+
+Impplement the issue #1
 
 Instructions:
-- Reply in English.
-- Keep the answer concise and practical.
-- Focus on root cause hypothesis, impact, and best next action.
 
-Use the issue content supplied when invoking this prompt as the main source.
+- Explain the problem, possible causes, and a recommended solution.
