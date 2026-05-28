@@ -1,0 +1,105 @@
+---
+interface Props {
+  tokens: number;
+  level: string;
+}
+
+const { tokens, level } = Astro.props;
+const formatted = tokens.toLocaleString('es-ES');
+const pct = Math.min((tokens / 15000) * 100, 100);
+---
+
+<section class="score-card">
+  <h2>⚡ Token score ⚡</h2>
+  <div class="gauge-wrapper">
+    <svg viewBox="0 0 200 200" class="gauge">
+      <circle cx="100" cy="100" r="85" fill="none" stroke="#2a2a4a" stroke-width="18" />
+      <circle
+        cx="100"
+        cy="100"
+        r="85"
+        fill="none"
+        stroke="url(#gaugeGrad)"
+        stroke-width="18"
+        stroke-linecap="round"
+        stroke-dasharray={`${pct * 5.34} 534`}
+        transform="rotate(-90 100 100)"
+      />
+      <defs>
+        <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#f7b733" />
+          <stop offset="50%" stop-color="#fc4a1a" />
+          <stop offset="100%" stop-color="#e74c9e" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="gauge-number">
+      <span class="big-num">{formatted}</span>
+      <span class="label">tokens consumidos</span>
+    </div>
+  </div>
+  <div class="level-badge">
+    <span>🌋</span> Nivel: {level}
+  </div>
+</section>
+
+<style>
+  .score-card {
+    background: linear-gradient(135deg, #4a3cb8, #6c5ce7);
+    border-radius: 20px;
+    padding: 28px 24px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(108, 92, 231, 0.3);
+  }
+
+  .score-card h2 {
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 16px;
+  }
+
+  .gauge-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 16px;
+  }
+
+  .gauge {
+    width: 100%;
+    height: 100%;
+  }
+
+  .gauge-number {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .big-num {
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .label {
+    font-size: 0.8rem;
+    opacity: 0.85;
+    margin-top: 4px;
+  }
+
+  .level-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+</style>

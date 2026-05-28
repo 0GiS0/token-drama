@@ -1,0 +1,82 @@
+---
+const navItems = [
+  { icon: "🏠", label: "Inicio", active: true },
+  { icon: "💬", label: "Chats", active: false },
+  { icon: "⚡", label: "Drama", active: false },
+  { icon: "🏆", label: "Ranking", active: false },
+  { icon: "📊", label: "Stats", active: false },
+];
+---
+
+<nav class="sidebar">
+  <div class="sidebar-logo">🤯</div>
+  {navItems.map((item) => (
+    <a class:list={["sidebar-item", { active: item.active }]} href="#">
+      <span class="sidebar-icon">{item.icon}</span>
+      <span class="sidebar-label">{item.label}</span>
+    </a>
+  ))}
+  <div class="sidebar-spacer"></div>
+  <a class="sidebar-item" href="#">
+    <span class="sidebar-icon">⚙️</span>
+    <span class="sidebar-label">Ajustes</span>
+  </a>
+</nav>
+
+<style>
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 90px;
+    background: #1e1e2e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px 0;
+    gap: 4px;
+    z-index: 10;
+  }
+
+  .sidebar-logo {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 10px 8px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #a0a0b0;
+    width: 72px;
+    transition: all 0.2s;
+  }
+
+  .sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+  }
+
+  .sidebar-item.active {
+    background: #e74c3c;
+    color: #fff;
+  }
+
+  .sidebar-icon {
+    font-size: 1.5rem;
+  }
+
+  .sidebar-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+  }
+
+  .sidebar-spacer {
+    flex: 1;
+  }
+</style>

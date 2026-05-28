@@ -1,0 +1,105 @@
+---
+import type { RankingEntry } from '../data/rankings';
+
+interface Props {
+  entries: RankingEntry[];
+}
+
+const { entries } = Astro.props;
+
+const positionColors = ['#f5a623', '#c0c0c0', '#cd7f32', '#6ec6ff', '#b8e986'];
+---
+
+<section class="ranking-card">
+  <div class="ranking-header">
+    <h2>👑 Top 5 del caos</h2>
+    <span class="ranking-subtitle">No son héroes, son leyendas</span>
+  </div>
+  <ul class="ranking-list">
+    {entries.map((entry, i) => (
+      <li class="ranking-row">
+        <span class="position" style={`background: ${positionColors[i]}`}>
+          {entry.position}
+        </span>
+        <span class="entry-emoji">{entry.emoji}</span>
+        <span class="entry-label">{entry.label}</span>
+        <span class="entry-badge">{entry.badge}</span>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .ranking-card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .ranking-header {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .ranking-header h2 {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+
+  .ranking-subtitle {
+    font-size: 0.85rem;
+    color: #888;
+    font-style: italic;
+  }
+
+  .ranking-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ranking-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    background: #f9f9fb;
+    border-radius: 14px;
+    transition: transform 0.15s;
+  }
+
+  .ranking-row:hover {
+    transform: translateX(4px);
+  }
+
+  .position {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 1rem;
+    color: #fff;
+    flex-shrink: 0;
+  }
+
+  .entry-emoji {
+    font-size: 1.6rem;
+  }
+
+  .entry-label {
+    flex: 1;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+
+  .entry-badge {
+    font-size: 1.4rem;
+  }
+</style>

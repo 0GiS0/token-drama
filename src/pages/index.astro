@@ -1,17 +1,143 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+import Sidebar from '../components/Sidebar.astro';
+import RankingCard from '../components/RankingCard.astro';
+import TokenScore from '../components/TokenScore.astro';
+import InfoCard from '../components/InfoCard.astro';
+import ChaosToggle from '../components/ChaosToggle.astro';
+import { rankings, dailyCase, streak, totalTokens, chaosLevel } from '../data/rankings';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Token Drama">
+  <Sidebar />
+
+  <main class="main-content">
+    <!-- Hero -->
+    <header class="hero">
+      <div class="hero-left">
+        <h1>
+          <span class="fire-emoji">🔥</span>
+          Token <span class="accent">Drama</span>
+        </h1>
+        <p class="tagline">
+          El ranking más absurdo de quién gasta más tokens
+        </p>
+        <p class="subtitle">
+          Porque no todos los prompts se van de las manos… pero <span class="red-underline">muchos sí</span>.
+        </p>
+      </div>
+      <div class="hero-mascot">🪙</div>
+    </header>
+
+    <!-- Main grid -->
+    <div class="dashboard-grid">
+      <div class="col-ranking">
+        <RankingCard entries={rankings} />
+      </div>
+
+      <div class="col-score">
+        <TokenScore tokens={totalTokens} level={chaosLevel} />
+      </div>
+    </div>
+
+    <!-- Bottom cards -->
+    <div class="bottom-cards">
+      <InfoCard
+        emoji={dailyCase.emoji}
+        title={dailyCase.title}
+        description={dailyCase.description}
+        color="#fff8ed"
+      />
+      <InfoCard
+        emoji={streak.emoji}
+        title={streak.title}
+        description={streak.description}
+        color="#edf6ff"
+      />
+      <ChaosToggle />
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .main-content {
+    margin-left: 90px;
+    padding: 32px 40px;
+    max-width: 1200px;
+  }
+
+  .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+
+  .fire-emoji {
+    font-size: 2.6rem;
+  }
+
+  .accent {
+    color: #e74c3c;
+  }
+
+  .tagline {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 6px;
+    color: #444;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  .red-underline {
+    color: #e74c3c;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+  }
+
+  .hero-mascot {
+    font-size: 5rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+
+  .bottom-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  :global(body.chaos-mode) {
+    animation: shake 0.3s infinite;
+    background: #1e1e2e !important;
+    color: #fdf6f0 !important;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    75% { transform: translateX(3px); }
+  }
+</style>

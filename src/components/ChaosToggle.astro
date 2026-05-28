@@ -1,0 +1,96 @@
+---
+---
+
+<div class="chaos-toggle">
+  <h3>Modo caos / modo calma</h3>
+  <div class="toggle-row">
+    <span class="calm-icon">🧘</span>
+    <span class="toggle-label">Calma</span>
+    <label class="switch">
+      <input type="checkbox" id="chaosSwitch" />
+      <span class="slider"></span>
+    </label>
+    <span class="toggle-label chaos-label">Caos</span>
+    <span class="chaos-icon">🔥</span>
+  </div>
+</div>
+
+<style>
+  .chaos-toggle {
+    background: #e8f8f5;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .chaos-toggle h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 14px;
+  }
+
+  .toggle-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .toggle-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .calm-icon,
+  .chaos-icon {
+    font-size: 1.4rem;
+  }
+
+  .switch {
+    position: relative;
+    width: 56px;
+    height: 30px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #a8e6cf;
+    border-radius: 30px;
+    transition: 0.3s;
+  }
+
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+
+  .switch input:checked + .slider {
+    background: #e74c3c;
+  }
+
+  .switch input:checked + .slider::before {
+    transform: translateX(26px);
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('chaosSwitch') as HTMLInputElement;
+  toggle?.addEventListener('change', () => {
+    document.body.classList.toggle('chaos-mode', toggle.checked);
+  });
+</script>

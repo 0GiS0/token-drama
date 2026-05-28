@@ -1,0 +1,45 @@
+---
+interface Props {
+  emoji: string;
+  title: string;
+  description: string;
+  color?: string;
+}
+
+const { emoji, title, description, color = '#fff8ed' } = Astro.props;
+---
+
+<div class="info-card" style={`background: ${color}`}>
+  <div class="info-emoji">{emoji}</div>
+  <div class="info-body">
+    <h3>{title}</h3>
+    <p>{description}</p>
+  </div>
+</div>
+
+<style>
+  .info-card {
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .info-emoji {
+    font-size: 2rem;
+  }
+
+  .info-body h3 {
+    font-size: 1rem;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+
+  .info-body p {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+  }
+</style>
