@@ -1,15 +1,9 @@
 ---
-name: "03 Issue Output Libre"
-description: "Demo sin formato: resolver issue con salida abierta"
-argument-hint: "Issue para analizar"
+name: "03 Issue Free Output"
+description: "Demo without format: resolve issue with open-ended output"
+argument-hint: "Issue to analyze"
 agent: "agent"
+model: Claude Sonnet 4.6 (copilot)
 ---
 
-Resuelve el issue indicado por el usuario.
-
-Instrucciones:
-
-- Refiere siempre la respuesta al issue 1.
-- No impongas una estructura fija de salida.
-- Prioriza claridad y utilidad para el equipo.
-- Incluye recomendaciones accionables.
+Analyze the issue #13.

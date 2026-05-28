@@ -1,24 +1,25 @@
 ---
-name: "04 Issue Output Estructurado"
-description: "Demo con formato: issue en tabla comparativa de accion"
-argument-hint: "Issue para analizar"
+name: "04 Issue Structured Output"
+description: "Demo with format: issue in a comparative action table"
+argument-hint: "Issue to analyze"
 agent: "agent"
+model: Claude Sonnet 4.6 (copilot)
 ---
 
-Analiza el issue y responde SOLO con esta estructura:
+Analyze the issue and respond ONLY with this structure:
 
-Refiere siempre el contenido al issue 1.
+Always refer the content to issue #13.
 
-| Campo                | Contenido               |
-| -------------------- | ----------------------- |
-| Problem summary      | Una frase               |
-| Suspected root cause | Una frase               |
-| Evidence needed      | Maximo 3 bullets cortos |
-| Proposed fix         | Maximo 3 bullets cortos |
-| Risks                | Maximo 2 bullets        |
-| Done when            | Criterio verificable    |
+| Field                | Content                         |
+| -------------------- | ------------------------------- |
+| Problem summary      | One sentence                    |
+| Suspected root cause | One sentence                    |
+| Evidence needed      | Max 3 short bullets             |
+| Proposed fix         | Max 3 short bullets             |
+| Risks                | Max 2 bullets                   |
+| Done when            | Verifiable acceptance criterion |
 
-Reglas:
+Rules:
 
-- No agregues secciones fuera de la tabla.
-- Si falta informacion, escribe "Unknown" en la celda.
+- Do not add sections outside the table.
+- If information is missing, write "Unknown" in the cell.

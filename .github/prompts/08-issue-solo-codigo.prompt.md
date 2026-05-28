@@ -1,15 +1,16 @@
 ---
-name: "08 Issue Solo Codigo"
-description: "Demo de ahorro de tokens: responder solo con codigo"
-argument-hint: "Issue + stack tecnologico + archivo objetivo"
+name: "08 Issue Code Only"
+description: "Token savings demo: respond with code only"
+argument-hint: "Issue + tech stack + target file"
 agent: "agent"
+model: Claude Sonnet 4.6 (copilot)
 ---
 
-Resuelve el issue y responde SOLO con codigo.
+Resolve the issue and respond without any natural language explanation.
 
-Reglas:
+Rules:
 
-- Refiere la solucion siempre al issue 1.
-- No incluyas explicaciones en lenguaje natural.
-- Si necesitas varios archivos, separalos con comentarios de ruta de archivo.
-- Mantener el codigo minimo para solucionar el issue.
+- Always refer the solution to issue 13.
+- Do not include natural language explanations.
+- If you need multiple files, separate them with file path comments.
+- Keep the code minimal to solve the issue.

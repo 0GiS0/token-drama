@@ -3,12 +3,13 @@ name: "06 Issue Respuesta Restringida"
 description: "Demo con limites duros: issue en 1 frase + 3 bullets"
 argument-hint: "Issue para analizar"
 agent: "agent"
+model: Claude Sonnet 4.6 (copilot)
 ---
 
-Analiza el issue y responde con estas reglas exactas:
+Analyze the issue and respond with these exact rules:
 
-- Refiere siempre la respuesta al issue 1.
-- Linea 1: una sola frase (maximo 20 palabras).
-- Luego exactamente 3 bullets.
-- Cada bullet debe empezar con un verbo en infinitivo.
-- No agregar texto extra antes ni despues.
+- Always refer the response to issue 13.
+- Line 1: a single sentence (maximum 20 words).
+- Then exactly 3 bullets.
+- Each bullet must start with a verb in infinitive form.
+- Do not add any extra text before or after.
