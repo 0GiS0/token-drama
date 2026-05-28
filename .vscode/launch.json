@@ -11,7 +11,7 @@
       "console": "integratedTerminal",
       "skipFiles": ["<node_modules>/**"],
       "serverReadyAction": {
-        "pattern": "Local:.+(https?://\\S+)",
+        "pattern": "Local.+(https?://\\S+)",
         "uriFormat": "%s",
         "action": "startDebugging",
         "name": "🌐 Open in Integrated Browser"
