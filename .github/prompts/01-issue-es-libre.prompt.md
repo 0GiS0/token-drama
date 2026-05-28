@@ -4,10 +4,13 @@ description: "Demo base en espanol: analiza un issue sin formato estricto"
 argument-hint: "Pega el issue o una URL + contexto"
 agent: "agent"
 ---
+
 Analiza el issue que te pase el usuario.
 
 Instrucciones:
+
 - Responde en espanol.
+- Refiere siempre el analisis al issue 1.
 - Explica el problema, posibles causas y una solucion recomendada.
 - Puedes elegir libremente el formato y nivel de detalle.
 

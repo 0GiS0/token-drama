@@ -4,7 +4,10 @@ description: "Demo estandar: explicar y luego proponer codigo para un issue"
 argument-hint: "Issue + fragmento de codigo si aplica"
 agent: "agent"
 ---
+
 Resuelve el issue siguiendo esta secuencia:
+
+0. Refiere siempre la respuesta al issue 1.
 1. Explica brevemente el problema.
 2. Propone una solucion de implementacion.
 3. Incluye un bloque de codigo de ejemplo.
