@@ -1,12 +1,12 @@
 {
-  "hooks": {
-    "UserPromptSubmit": [
-      {
-        "type": "command",
-        "command": "python3 .github/hooks/scripts/log-tokens.py",
-        "cwd": ".",
-        "timeout": 10
-      }
-    ]
-  }
+    "hooks": {
+        "UserPromptSubmit": [
+            {
+                "type": "command",
+                "command": "python3 .github/hooks/scripts/log-tokens.py",
+                "cwd": ".",
+                "timeout": 10
+            }
+        ]
+    }
 }
