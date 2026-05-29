@@ -1,6 +1,13 @@
 # Prompt Pack: Token Contrast Demos
 
-Este pack demuestra contrastes de prompting sobre un mismo issue.
+Este pack demuestra contrastes de prompting sobre un mismo objetivo: implementar y mejorar un issue aplicando cambios locales.
+
+Objetivo comun:
+
+- 01 (espanol) trabaja sobre el issue #1.
+- 02-08 (resto) trabajan sobre el issue #13.
+- Todos aplican la solucion como cambios locales.
+- Ninguno hace commit, push ni crea issues/PRs, para poder revertir y probar otro prompt.
 
 Pares recomendados:
 
@@ -12,18 +19,12 @@ Pares recomendados:
 Como usar:
 
 1. En chat, escribe / y selecciona un prompt del pack.
-2. Pega el mismo issue en cada prueba.
-3. Compara longitud, claridad, accionabilidad y costo de tokens.
+2. Ejecuta el prompt (01 sobre el issue #1, el resto sobre el issue #13).
+3. Revisa los cambios locales y comparalos.
+4. Revierte los cambios antes de probar el siguiente prompt.
 
-Sugerencia de input para comparar:
+Que comparar:
 
-- URL de issue
-- Resumen corto del bug
-- Stack (ejemplo: Astro + TypeScript)
-- Restricciones (deadline, no breaking changes)
-
-Issue sugerido para demo rapida:
-
-1. Usa el issue #1 para comparar 01-08.
-2. Repite exactamente el mismo input en cada prompt.
-3. Evalua diferencias en tokens, claridad y accion concreta.
+- Longitud y claridad de la respuesta
+- Accionabilidad y calidad del cambio aplicado
+- Costo de tokens

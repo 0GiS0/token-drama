@@ -6,8 +6,10 @@ agent: "agent"
 model: Claude Sonnet 4.6 (copilot)
 ---
 
-Impplement the issue #13
+Implement the issue #13.
 
 Instructions:
 
-- Explain the problem, possible causes, and a recommended solution.
+- Explain the problem, possible causes, and the recommended solution.
+- Apply the solution as local code changes.
+- Local changes only: never commit, push, or create issues or PRs, so the work can be reverted to test another prompt.
