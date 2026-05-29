@@ -5,6 +5,12 @@ tools: []
 argument-hint: "Paste a prompt in Spanish to translate into English"
 user-invocable: true
 model: "qwen2.5:7b (ollama)"
+handoffs:
+  - label: "Start Implementation"
+    agent: "agent"
+    prompt: "Implement the plan"
+    send: true
+    model: "Auto"
 ---
 
 You are a specialist in translating prompts from Spanish to English.
