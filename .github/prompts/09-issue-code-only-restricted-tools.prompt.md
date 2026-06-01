@@ -4,18 +4,7 @@ description: "Token savings demo: code only, with minimal tool set"
 argument-hint: "Issue + tech stack + target file"
 agent: "agent"
 model: Claude Sonnet 4.6 (copilot)
-tools:
-  - run_in_terminal
-  - get_terminal_output
-  - read_file
-  - list_dir
-  - file_search
-  - grep_search
-  - semantic_search
-  - replace_string_in_file
-  - multi_replace_string_in_file
-  - create_file
-  - get_errors
+tools: [vscode, execute, read, edit, search, web, browser, todo]
 ---
 
 Solve the issue #13 by applying local code changes, and respond with code ONLY.
