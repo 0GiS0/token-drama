@@ -14,3 +14,4 @@ Rules:
 - Do not include natural language explanations.
 - Keep the code minimal to solve the issue.
 - Local changes only: never commit, push, or create issues or PRs, so the work can be reverted to test another prompt.
+- Use GitHub CLI to get the issue details
